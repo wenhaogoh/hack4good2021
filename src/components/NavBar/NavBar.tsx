@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Map = () => {
+const NavBar = () => {
   return <div></div>;
 };
 
-export default Map;
+export default NavBar;
