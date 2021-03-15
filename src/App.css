@@ -1,8 +1,22 @@
 .App {
+  font-family: SF-UI-Display;
   display: flex;
   flex-direction: column;
   height: 100%;
   text-align: center;
   color: white;
   background-color: #1d222c;
+}
+
+@font-face {
+  font-family: 'SF-UI-Display';
+  src: local('SF-UI-Display'),
+    url(./fonts/SF-UI-Display/SF-UI-Display-Light.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SF-UI-Display';
+  font-weight: bold;
+  src: local('SF-UI-Display'),
+    url(./fonts/SF-UI-Display/SF-UI-Display-Bold.otf) format('opentype');
 }
