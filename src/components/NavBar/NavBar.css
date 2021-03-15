@@ -1,0 +1,9 @@
+.NavBar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  background-color: #1d222c;
+  position: absolute;
+}

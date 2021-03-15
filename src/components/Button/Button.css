@@ -1,0 +1,6 @@
+.Button {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #2e343d;
+  border-radius: 5px;
+}

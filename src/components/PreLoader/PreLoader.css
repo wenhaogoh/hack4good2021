@@ -1,0 +1,10 @@
+.PreLoader {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: all 0.8s ease-in-out;
+  pointer-events: none;
+}
