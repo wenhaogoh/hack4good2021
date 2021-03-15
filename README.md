@@ -2,6 +2,8 @@
 
 # The Social Census
 
+https://thesocialcensus.netlify.app/
+
 ## Inital setup
 
 1. Install `node` and Docker
