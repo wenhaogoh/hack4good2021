@@ -1,17 +1,16 @@
-import React, {useState} from 'react';
-import Question from '../Question/Question';
-import Answer from '../Answer/Answer';
-import {IQuestionSet} from '../../data/data';
-import Button from '../Button/Button';
-import './QuestionSet.css';
-import {IDelayedAction, executeDelayedActions} from '../../action/action';
+import React, { useState } from "react";
+import Question from "../Question/Question";
+import Answer from "../Answer/Answer";
+import { IQuestionSet } from "../../data/data";
+import "./QuestionSet.css";
+import { IDelayedAction, executeDelayedActions } from "../../action/action";
 
 interface Props {
   questionSet: IQuestionSet;
   nextQuestion: () => void;
 }
 
-const QuestionSet = ({questionSet, nextQuestion}: Props) => {
+const QuestionSet = ({ questionSet, nextQuestion }: Props) => {
   const [isAnswered, setisAnswered] = useState(false);
   const [show, setShow] = useState(true);
 
@@ -34,8 +33,8 @@ const QuestionSet = ({questionSet, nextQuestion}: Props) => {
   };
 
   const delayedActions: IDelayedAction[] = [
-    {action: hideQuestionSetAction, delay: 200},
-    {action: showQuestionSetAction},
+    { action: hideQuestionSetAction, delay: 200 },
+    { action: showQuestionSetAction },
   ];
 
   const nextQuestionClickHandler = () => {
@@ -44,16 +43,21 @@ const QuestionSet = ({questionSet, nextQuestion}: Props) => {
   };
 
   return (
-    <div className="QuestionSet" style={show ? {opacity: 1} : undefined}>
-      <Question question={questionSet.question} />
-      <Answer
-        choices={questionSet.choices}
-        setIsAnsweredToTrue={setIsAnsweredToTrue}
+    <>
+      <div className="QuestionSet" style={show ? { opacity: 1 } : undefined}>
+        <Question question={questionSet.question} />
+        <Answer
+          isAnswered={isAnswered}
+          choices={questionSet.choices}
+          setIsAnsweredToTrue={setIsAnsweredToTrue}
+        />
+      </div>
+      <div
+        className="Next"
+        style={isAnswered ? undefined : { visibility: "hidden" }}
+        onClick={nextQuestionClickHandler}
       />
-      {isAnswered ? (
-        <Button label="next" onClickHandler={nextQuestionClickHandler} />
-      ) : null}
-    </div>
+    </>
   );
 };
 
