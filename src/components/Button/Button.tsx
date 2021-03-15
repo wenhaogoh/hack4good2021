@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./Button.css";
+import React, {useState} from 'react';
+import './Button.css';
 
 interface Props {
   showPercentage: boolean;
@@ -27,25 +27,25 @@ const Button = ({
     setSelected(false);
   }
 
-  const classes = ["Button"];
+  const classes = ['Button'];
 
   if (selected) {
-    classes.push("selected");
+    classes.push('selected');
   }
 
   return (
     <div
-      className={classes.join(" ")}
+      className={classes.join(' ')}
       onClick={onClickHandler}
       style={
         show && showPercentage
           ? {
-              visibility: "visible",
-              pointerEvents: "none",
+              visibility: 'visible',
+              pointerEvents: 'none',
               backgroundPosition: `${100 - percentage}% 0%`,
             }
           : show
-          ? { visibility: "visible" }
+          ? {visibility: 'visible'}
           : undefined
       }
     >

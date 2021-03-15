@@ -1,6 +1,6 @@
-import { IChoice } from "../../data/data";
-import Button from "../Button/Button";
-import "./Answer.css";
+import {IChoice} from '../../data/data';
+import Button from '../Button/Button';
+import './Answer.css';
 
 interface Props {
   setIsAnsweredToTrue: () => void;
