@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/98c2577a-7873-4628-a157-28d72080dfd4/deploy-status)](https://app.netlify.com/sites/thesocialcensus/deploys)
+
 # The Social Census
 
 ## Inital setup
