@@ -24,3 +24,7 @@
   background: linear-gradient(to right, blue 50%, transparent 50%) left;
   background-size: 200%;
 }
+
+.Label {
+  margin-top: 5px;
+}
