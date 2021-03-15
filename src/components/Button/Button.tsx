@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Button.css";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   show: boolean;
   label: string;
   percentage: number;
-  onClickHandler: () => void;
+  setIsAnsweredToTrue: () => void;
 }
 
 const Button = ({
@@ -14,11 +14,28 @@ const Button = ({
   showPercentage,
   show,
   label,
-  onClickHandler,
+  setIsAnsweredToTrue,
 }: Props) => {
+  const [selected, setSelected] = useState(false);
+
+  const onClickHandler = () => {
+    setSelected(true);
+    setIsAnsweredToTrue();
+  };
+
+  if (!showPercentage && selected) {
+    setSelected(false);
+  }
+
+  const classes = ["Button"];
+
+  if (selected) {
+    classes.push("selected");
+  }
+
   return (
     <div
-      className="Button"
+      className={classes.join(" ")}
       onClick={onClickHandler}
       style={
         show && showPercentage

@@ -13,10 +13,6 @@ const Answer = ({
   setIsAnsweredToTrue,
   choices,
 }: Props) => {
-  const onClickHandler = () => {
-    setIsAnsweredToTrue();
-  };
-
   return (
     <div className="Answer">
       {choices.map((choice, index) => (
@@ -25,7 +21,7 @@ const Answer = ({
           show
           label={choice.label}
           percentage={choice.percentage}
-          onClickHandler={onClickHandler}
+          setIsAnsweredToTrue={setIsAnsweredToTrue}
           showPercentage={showPercentage}
         />
       ))}

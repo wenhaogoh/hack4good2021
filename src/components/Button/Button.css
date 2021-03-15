@@ -11,9 +11,16 @@
 }
 
 .Button:hover {
+  background: linear-gradient(to right, blue 50%, transparent 50%) left;
+  background-size: 200%;
   cursor: pointer;
 }
 
 .Button:active {
   transform: scale(1);
+}
+
+.selected {
+  background: linear-gradient(to right, blue 50%, transparent 50%) left;
+  background-size: 200%;
 }
