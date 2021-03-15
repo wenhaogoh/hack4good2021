@@ -4,6 +4,8 @@ import Answer from '../Answer/Answer';
 import {IQuestionSet} from '../../data/data';
 import './QuestionSet.css';
 import {IDelayedAction, executeDelayedActions} from '../../action/action';
+import {AiFillFacebook, AiFillInstagram} from 'react-icons/ai';
+import {FaTwitter} from 'react-icons/fa';
 
 interface Props {
   questionSet: IQuestionSet;
@@ -51,6 +53,24 @@ const QuestionSet = ({questionSet, nextQuestion}: Props) => {
           choices={questionSet.choices}
           setIsAnsweredToTrue={setIsAnsweredToTrue}
         />
+        {isAnswered ? null : (
+          <div onClick={nextQuestionClickHandler} className="Skip">
+            skip question
+          </div>
+        )}
+        {isAnswered ? (
+          <div className="Icons">
+            <div className="Icon">
+              <AiFillFacebook size={40} />
+            </div>
+            <div className="Icon">
+              <AiFillInstagram size={40} />
+            </div>
+            <div className="Icon">
+              <FaTwitter size={35} />
+            </div>
+          </div>
+        ) : null}
       </div>
       <div
         className="Next"

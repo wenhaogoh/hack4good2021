@@ -1,4 +1,8 @@
 .QuestionSet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   opacity: 0;
   transition: all 0.2s ease-in-out;
 }
@@ -7,4 +11,30 @@
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+.Icons {
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.Icon {
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.Icon:hover {
+  transform: scale(1.2);
+}
+
+.Skip {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.Skip:hover {
+  text-decoration: underline;
 }
