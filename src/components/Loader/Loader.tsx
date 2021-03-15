@@ -18,7 +18,7 @@ const Loader = ({show}: Props) => {
     <div className="Loader" style={show ? {opacity: 1} : undefined}>
       <h1
         className="h1"
-        style={isTranslating ? {transform: 'translateY(-400px)'} : undefined}
+        style={isTranslating ? {transform: 'translateY(-40vh)'} : undefined}
       >
         The Social Census
       </h1>
