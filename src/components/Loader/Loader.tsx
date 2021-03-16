@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Loader.css';
+import Typewriter from 'typewriter-effect';
 
 interface Props {
   show: boolean;
@@ -16,11 +17,29 @@ const Loader = ({show}: Props) => {
 
   return (
     <div className="Loader" style={show ? {opacity: 1} : undefined}>
-      <h1
+      {/* <h1
         className="h1"
         style={isTranslating ? {transform: 'translateY(-40vh)'} : undefined}
       >
         The Social Census
+      </h1> */}
+      <h1
+        style={
+          isTranslating
+            ? {transform: 'translateY(-40vh)', fontSize: 20}
+            : undefined
+        }
+      >
+        <Typewriter
+          onInit={typewriter => {
+            typewriter
+              .pauseFor(5000)
+              .changeDelay(60)
+              .typeString('The Social Census')
+              .callFunction(() => setIsTranslating(true))
+              .start();
+          }}
+        />
       </h1>
     </div>
   );
