@@ -4,12 +4,15 @@ import PreLoader from './components/PreLoader/PreLoader';
 import NavBar from './components/NavBar/NavBar';
 import Layout from './components/Layout/Layout';
 import Loader from './components/Loader/Loader';
+import axios from 'axios';
+import {IQuestion} from './data/data';
 import {IDelayedAction, executeDelayedActions} from './action/action';
 
 function App() {
   const [isPreLoading, setIsPreLoading] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
   const [showLayout, setShowLayout] = useState(false);
+  const [questionIds, setQuestionIds] = useState<number[]>();
 
   const showPreLoaderAction = () => {
     setIsPreLoading(true);
@@ -28,13 +31,19 @@ function App() {
   };
 
   useEffect(() => {
-    const delayedActions: IDelayedAction[] = [
-      {action: showPreLoaderAction, delay: 3000},
-      {action: hidePreLoaderAction, delay: 1500},
-      {action: showTitleActionAction, delay: 2500},
-      {action: showLayoutAction},
-    ];
-    executeDelayedActions(delayedActions);
+    setIsPreLoading(true);
+    if (!questionIds) {
+      axios.get<IQuestion[]>('/questions').then(questions => {
+        setQuestionIds(questions.data.map(question => question.id));
+        const delayedActions: IDelayedAction[] = [
+          {action: showPreLoaderAction, delay: 3000},
+          {action: hidePreLoaderAction, delay: 1500},
+          {action: showTitleActionAction, delay: 2500},
+          {action: showLayoutAction},
+        ];
+        executeDelayedActions(delayedActions);
+      });
+    }
   }, []);
 
   return (
@@ -42,7 +51,7 @@ function App() {
       <PreLoader show={isPreLoading} />
       <Loader show={showTitle} />
       <NavBar />
-      {showLayout ? <Layout /> : null}
+      {showLayout && questionIds ? <Layout questionIds={questionIds} /> : null}
     </div>
   );
 }

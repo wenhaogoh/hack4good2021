@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import './Layout.css';
 import QuestionSet from '../QuestionSet/QuestionSet';
-import {questionSets} from '../../data/data';
 
-const Layout = () => {
-  const questionSetCount = questionSets.length;
+interface Props {
+  questionIds: number[];
+}
+
+const Layout = ({questionIds}: Props) => {
+  const questionSetCount = questionIds.length;
   const [index, setIndex] = useState<number>(0);
 
   const increamentIndex = () => {
@@ -17,10 +20,7 @@ const Layout = () => {
 
   return (
     <div className="Layout">
-      <QuestionSet
-        questionSet={questionSets[index]}
-        nextQuestion={nextQuestion}
-      />
+      <QuestionSet id={questionIds[index]} nextQuestion={nextQuestion} />
     </div>
   );
 };
