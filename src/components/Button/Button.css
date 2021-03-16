@@ -12,7 +12,7 @@
 }
 
 .Button:hover {
-  background: linear-gradient(to right, #41c0e4 50%, transparent 50%) left;
+  background: linear-gradient(to right, #F8A755 , #EE568C);
   background-size: 200%;
   cursor: pointer;
 }
@@ -22,7 +22,7 @@
 }
 
 .selected {
-  background: linear-gradient(to right, #41c0e4 50%, transparent 50%) left;
+  background: linear-gradient(to right, #F8A755 , #EE568C);
   background-size: 200%;
 }
 
