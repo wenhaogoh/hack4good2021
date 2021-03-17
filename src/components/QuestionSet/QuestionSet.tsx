@@ -16,6 +16,7 @@ const QuestionSet = ({id, nextQuestion}: Props) => {
   const [question, setQuestion] = useState<IQuestion>();
   const [isAnswered, setisAnswered] = useState(false);
   const [show, setShow] = useState(false);
+  const [isNextEnabled, setIsNextEnabled] = useState(false);
 
   const usePrevious = (value: number) => {
     const ref = useRef<number>();
@@ -29,10 +30,12 @@ const QuestionSet = ({id, nextQuestion}: Props) => {
 
   const setIsAnsweredToTrue = () => {
     setisAnswered(true);
+    setIsNextEnabled(true);
   };
 
   const nextQuestionClickHandler = () => {
     setShow(false);
+    setIsNextEnabled(false);
     nextQuestion();
   };
 
@@ -98,7 +101,9 @@ const QuestionSet = ({id, nextQuestion}: Props) => {
           </div>
           <div
             className="Next"
-            style={isAnswered ? undefined : {visibility: 'hidden'}}
+            style={
+              isAnswered && isNextEnabled ? undefined : {visibility: 'hidden'}
+            }
             onClick={nextQuestionClickHandler}
           />
         </>
