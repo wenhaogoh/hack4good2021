@@ -6,7 +6,15 @@ A simple, fun-to-use question-and-answer platform which provokes thought and dis
 
 This is a prototype built for Hack For Good 2021 and is currently deployed at: https://thesocialcensus.netlify.app/
 
-## Inital setup
+Link to backend repository: https://github.com/wenhaogoh/hack4good2021api
+
+## Features Implemented
+
+1. Question and response interface
+2. Real time response statistics
+3. Mobile responsive interface
+
+## Inital Setup
 
 1. Install `node` and Docker
 2. Run `npm install -g yarn` to install `yarn`
