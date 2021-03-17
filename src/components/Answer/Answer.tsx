@@ -8,21 +8,20 @@ interface Props {
   isAnswered: boolean;
 }
 
-const Answer = ({
-  isAnswered: showPercentage,
-  setIsAnsweredToTrue,
-  choices,
-}: Props) => {
+const Answer = ({isAnswered, setIsAnsweredToTrue, choices}: Props) => {
+  const totalCount = choices
+    .map(choice => choice.count)
+    .reduce((acc, curr) => acc + curr);
   return (
     <div className="Answer">
       {choices.map((choice, index) => (
         <Button
           key={index}
           show
-          label={choice.label}
-          percentage={choice.percentage}
+          choice={choice}
+          totalCount={totalCount}
           setIsAnsweredToTrue={setIsAnsweredToTrue}
-          showPercentage={showPercentage}
+          showPercentage={isAnswered}
         />
       ))}
     </div>

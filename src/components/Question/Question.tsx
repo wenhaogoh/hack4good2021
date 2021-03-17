@@ -2,13 +2,11 @@ import React from 'react';
 import './Question.css';
 
 interface Props {
-  question?: string;
+  question: string;
 }
 
 const Question = ({question}: Props) => {
-  return (
-    <div>{question ? <div className={'Question'}>{question}</div> : null}</div>
-  );
+  return <div className={'Question'}>{question}</div>;
 };
 
 export default Question;

@@ -2,7 +2,9 @@
 
 # The Social Census
 
-https://thesocialcensus.netlify.app/
+A simple, fun-to-use question-and-answer platform which provokes thought and discussion about social issues involving diversity in Singapore, by illuminating the differences in our views and experiences.
+
+This is a prototype built for Hack For Good 2021 and is currently deployed at: https://thesocialcensus.netlify.app/
 
 ## Inital setup
 
@@ -14,3 +16,18 @@ https://thesocialcensus.netlify.app/
 
 1. Run `yarn start` to start the development server
 2. Run `yarn lint` to check for code style violations
+
+## Stack
+
+### Frontend
+
+* NodeJS
+* React
+* Typescript
+* Deployed on Netlify
+
+### Backend
+
+* NodeJS
+* Postgresql (Using Sequelize)
+* Deployed on Heroku
