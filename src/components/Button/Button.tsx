@@ -58,8 +58,10 @@ const Button = ({
           : undefined
       }
     >
-      <div>{choice.name}</div>
-      {showPercentage ? <div className={'Label'}>{percentage}%</div> : null}
+      <div>
+        {choice.name}
+        {showPercentage ? `: ${percentage}%` : null}
+      </div>
     </div>
   );
 };
