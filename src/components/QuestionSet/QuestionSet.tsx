@@ -86,17 +86,19 @@ const QuestionSet = ({id, nextQuestion}: Props) => {
               </div>
             )}
             {isAnswered ? (
-              <div className="Icons">
-                <div className="Icon">
-                  <AiFillFacebook size={40} />
+              <>
+                <div className="Icons">
+                  <div className="Icon">
+                    <AiFillFacebook size={40} />
+                  </div>
+                  <div className="Icon">
+                    <AiFillInstagram size={40} />
+                  </div>
+                  <div className="Icon">
+                    <FaTwitter size={35} />
+                  </div>
                 </div>
-                <div className="Icon">
-                  <AiFillInstagram size={40} />
-                </div>
-                <div className="Icon">
-                  <FaTwitter size={35} />
-                </div>
-              </div>
+              </>
             ) : null}
           </div>
           <div

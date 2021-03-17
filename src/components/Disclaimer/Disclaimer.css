@@ -1,0 +1,36 @@
+.Disclaimer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 999;
+  cursor: default;
+}
+
+.Title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Text {
+  font-size: 1.2em;
+  max-width: 350px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.Start {
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.Start:hover {
+  text-decoration: none;
+  cursor: pointer;
+}

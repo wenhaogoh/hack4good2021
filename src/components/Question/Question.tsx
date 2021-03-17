@@ -6,7 +6,13 @@ interface Props {
 }
 
 const Question = ({question}: Props) => {
-  return <div className={'Question'}>{question}</div>;
+  return (
+    <>
+      {question.trim().length === 0 ? null : (
+        <div className={'Question'}>{question}</div>
+      )}
+    </>
+  );
 };
 
 export default Question;
