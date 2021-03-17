@@ -87,6 +87,13 @@ const QuestionSet = ({id, nextQuestion}: Props) => {
             )}
             {isAnswered ? (
               <>
+                <div className="Total">
+                  total responses:{' '}
+                  {question.Choices.map(choice => choice.count).reduce(
+                    (acc, curr) => acc + curr
+                  ) + 1}
+                </div>
+                <div className="Comments">view comments</div>
                 <div className="Icons">
                   <div className="Icon">
                     <AiFillFacebook size={40} />
