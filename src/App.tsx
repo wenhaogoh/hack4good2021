@@ -22,7 +22,7 @@ function App() {
     setIsPreLoading(false);
   };
 
-  const showTitleActionAction = () => {
+  const showTitleAction = () => {
     setShowTitle(true);
   };
 
@@ -38,7 +38,7 @@ function App() {
         const delayedActions: IDelayedAction[] = [
           {action: showPreLoaderAction, delay: 3000},
           {action: hidePreLoaderAction, delay: 1500},
-          {action: showTitleActionAction, delay: 2500},
+          {action: showTitleAction, delay: 2500},
           {action: showLayoutAction},
         ];
         executeDelayedActions(delayedActions);

@@ -45,7 +45,6 @@ const QuestionSet = ({id, nextQuestion}: Props) => {
         );
         question.Choices = sortedChoices;
         setQuestion(question);
-        setShow(true);
       });
     }
   }, []);
@@ -59,7 +58,11 @@ const QuestionSet = ({id, nextQuestion}: Props) => {
       question.Choices = sortedChoices;
       setisAnswered(false);
       setQuestion(question);
-      setShow(true);
+      if (prevId === undefined) {
+        setTimeout(() => setShow(true), 500);
+      } else {
+        setShow(true);
+      }
     });
   }
 
